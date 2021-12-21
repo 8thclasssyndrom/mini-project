@@ -1,0 +1,47 @@
+{% load static  %}
+<html>
+	<head>
+		<title>Визитная карточка</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+
+	</head>
+	<body >
+
+	<header id="header">
+		<h1>Визитная карточка</h1>
+	</header>
+	<p></p>
+	{% for card in cards  %}
+        <div class="card">
+			<img src="{{ card.image.url }}" style="width:150px;height:150px" class="card-img-top" alt="...">
+		  <div class="card-body">
+			  <div class="card-header">Врач</div>
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item">{{ card.name }}</li>
+					<li class="list-group-item">{{ card.description }}</li>
+					<li class="list-group-item">{{ card.number }}</li>
+					<li class="list-group-item">{{ card.address }}</li>
+				</ul>
+		  </div>
+		</div>
+	{% endfor  %}
+
+
+
+
+
+
+
+		<!-- Scripts -->
+			<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'assets/js/jquery.scrollex.min.js' %}"></script>
+			<script src="{% static 'assets/js/jquery.scrolly.min.js' %}"></script>
+			<script src="{% static 'assets/js/browser.min.js' %}"></script>
+			<script src="{% static 'assets/js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'assets/js/util.js' %}"></script>
+			<script src="{% static 'assets/js/main.js' %}"></script>
+
+	</body>
+</html>

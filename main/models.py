@@ -6,7 +6,7 @@ class Card(models.Model):
     name = models.CharField(max_length=100, verbose_name='Имя доктора')
     description = models.TextField(blank=True, null=True, verbose_name='Описание')
     number = PhoneNumberField(unique=True, null=False, blank=False, region='KG')
-    image = models.ImageField(blank=True, null=True, upload_to='card')
+    image = models.ImageField(blank=True, null=True, upload_to='card-image')
     address = models.CharField(max_length=100, verbose_name='Адрес')
 
     def __str__(self):
